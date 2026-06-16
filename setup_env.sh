@@ -15,14 +15,9 @@ sudo apt-get upgrade -y
 # 2. Install System-Level Dependencies
 # These are critical for OpenCV and NumPy performance on ARM
 echo "Installing system dependencies..."
-sudo apt-get install -y \
+sudo apt install -y \
     python3-pip \
     python3-dev \
-    libatlas-base-dev \
-    libjasper-dev \
-    libpq5 \
-    libopenjp2-7 \
-    libtiff5-dev \
     libopencv-dev \
     git
 
