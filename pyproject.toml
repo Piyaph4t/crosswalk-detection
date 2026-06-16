@@ -5,9 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-    "numpy>=2.4.6",
+    "numpy>=1.21.0,<2.0.0",
     "onnxruntime>=1.27.0",
-    "opencv-python-headless>=4.13.0.92",
+    "opencv-python-headless>=4.10.0.0",
     "pyyaml>=6.0.3",
     "smbus2>=0.6.1",
 ]

@@ -41,7 +41,7 @@ echo "Initializing Python project with uv..."
 # Use the system python binary to ensure compatibility with Raspbian repo
 uv venv --python $(which python3)
 source .venv/bin/activate
-uv pip install onnxruntime opencv-python-headless numpy smbus2 pyyaml
+uv pip install .
 
 # 5. Enable I2C for HuskyLens
 echo "Enabling I2C interface..."
