@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.DS_Store
+assets/models/*.onnx
+assets/models/*.pt
+assets/models/*.bin
+assets/models/*.xml
+runs/

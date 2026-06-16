@@ -1,0 +1,13 @@
+[project]
+name = "crosswalk-detection"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=2.4.6",
+    "onnxruntime>=1.27.0",
+    "opencv-python-headless>=4.13.0.92",
+    "pyyaml>=6.0.3",
+    "smbus2>=0.6.1",
+]
