@@ -3,11 +3,12 @@ name = "crosswalk-detection"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
-    "numpy>=1.21.0,<2.0.0",
-    "onnxruntime>=1.27.0",
-    "opencv-python-headless>=4.10.0.0",
-    "pyyaml>=6.0.3",
-    "smbus2>=0.6.1",
+    "numpy",
+    "onnxruntime",
+    "opencv-python-headless",
+    "pyyaml",
+    "smbus2",
+    "ultralytics"
 ]
