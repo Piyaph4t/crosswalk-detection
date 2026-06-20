@@ -2,6 +2,7 @@ from ultralytics import YOLO
 from typing import List, Tuple
 import numpy as np
 
+
 class DetectionEngine:
     """
     Wraps the YOLO model to provide consistent inference results.
@@ -11,7 +12,9 @@ class DetectionEngine:
         # Initialize YOLO model (supports NCNN/ONNX)
         self.model = YOLO(model_path)
 
-    def predict(self, frame: np.ndarray, conf_threshold: float = 0.25) -> List[Tuple[List[int], float, int]]:
+    def predict(
+        self, frame: np.ndarray, conf_threshold: float = 0.25
+    ) -> List[Tuple[List[int], float, int]]:
         """
         Perform inference on a single frame.
 
