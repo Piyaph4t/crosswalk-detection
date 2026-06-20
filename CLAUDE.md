@@ -24,14 +24,6 @@ The project uses `uv` for fast, reproducible dependency management linked to the
 
 ## Architecture
 The project follows a "Vision Provider" pattern to decouple hardware inputs from the AI engine.
-
-### Core Components
-- **`src/providers/`**: Implements `VisionProvider` base class.
-    - `pi_cam.py`: Captures frames via OpenCV.
-    - `husky_lens.py`: Captures detections via I2C.
-- **`src/core/engine.py`**: The AI brain. Uses **ONNX Runtime** with the **XNNPACK** execution provider for optimized ARM CPU inference.
-- **`src/core/metrics.py`**: Implements a sliding window average to track and report stable FPS.
-
 ### Inference Pipeline
 `VisionProvider` $\rightarrow$ `Pre-processing (Resize/Normalize)` $\rightarrow$ `ONNX Engine (XNNPACK)` $\rightarrow$ `Post-processing (NMS)` $\rightarrow$ `Metrics/Visualization`.
 

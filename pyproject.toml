@@ -7,8 +7,10 @@ requires-python = ">=3.11"
 dependencies = [
     "numpy",
     "onnxruntime",
-    "opencv-python-headless",
+    "opencv-contrib-python",
+    "psutil>=7.2.2",
     "pyyaml",
     "smbus2",
-    "ultralytics"
+    "tflite-runtime>=2.14.0",
+    "ultralytics",
 ]
