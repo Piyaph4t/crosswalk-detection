@@ -1,0 +1,25 @@
+vision:
+  provider: "video_file"  # Options: "video_file", "rtsp", "picamera", "usb_webcam"
+
+  video_file:
+    file_path: "src/test.mp4"
+    loop: true
+
+  rtsp:
+    url: "rtsp://192.168.1.100:554/stream1"
+    reconnect_timeout: 5
+    read_timeout: 10
+    buffer_size: 1
+
+  picamera:
+    resolution: [640, 480]
+    framerate: 30
+
+  usb_webcam:
+    device_id: 0
+    resolution: [640, 480]
+
+inference:
+  model_path: "assets/model/yolov8n.onnx"
+  confidence_threshold: 0.25
+  input_size: 640

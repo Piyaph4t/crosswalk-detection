@@ -19,7 +19,9 @@ sudo apt install -y \
     python3-pip \
     python3-dev \
     libopencv-dev \
-    git
+    git \
+    libatlas-base-dev \
+    libgfortran5
 
 # 3. Install UV (Ultra-fast Python package manager)
 if ! command -v uv &> /dev/null
@@ -36,15 +38,29 @@ echo "Initializing Python project with uv..."
 # Use the system python binary to ensure compatibility with Raspbian repo
 uv venv --python $(which python3)
 source .venv/bin/activate
-uv pip install .
 
-# 5. Enable I2C for HuskyLens
+# Install dependencies from pyproject.toml
+echo "Installing project dependencies..."
+uv pip install -e .
+
+# 5. Verify installation
+echo "Verifying installation..."
+python -c "import cv2; import numpy; import yaml; print('✅ Core dependencies installed successfully')"
+
+# 6. Enable I2C for HuskyLens (optional, only if using HuskyLens)
 echo "Enabling I2C interface..."
 # This typically requires a reboot to take effect
 sudo raspi-config nonint do_i2c 0
 
 echo "------------------------------------------------------------"
 echo "✅ Setup complete!"
+echo ""
+echo "Next steps:"
+echo "  1. Activate virtual environment: source .venv/bin/activate"
+echo "  2. Configure your camera in config.yaml"
+echo "  3. Run inference: uv run python src/main.py"
+echo "  4. Run tests: uv run pytest tests/"
+echo ""
 echo "⚠️  IMPORTANT: Please REBOOT your Raspberry Pi to activate I2C."
 echo "Command: sudo reboot"
 echo "------------------------------------------------------------"
